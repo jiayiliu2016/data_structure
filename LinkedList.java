@@ -138,7 +138,15 @@ public class LinkedList{
 	// double LinkList
 	p.prior.next = p = p.next.prior;
 
+	// insert s in front of p
+	s.prior=p.prior;
+	p.prior.next=s;
+	s.next=p;
+	p.prior=s;
 
+	// delete node p
+	p.prior.next=p.next;
+	p.next.prior=p.prior;
 
 
 // use
@@ -224,7 +232,6 @@ public class LinkedList{
 				rear.next=s
 
 			}
-
 		} 	
 
 
