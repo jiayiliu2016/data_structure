@@ -25,17 +25,16 @@ public class LinkedList{
 
 	// insert to rear to creat linklist
 	public static LinkList Creat_LinkList(){
-		LinkList L=new LinkList(NULL);
-		LinkNode s,r;
+		LinkList L= new LinkList();
+		LinkNode s;
 		Scanner scanner= new Scanner(System.in);
-		int x=scanner.nextInt;
-		r=L.Head.next;
+		int x=scanner.nextInt;	
 		while(x!=flag){
 			s=new LinkNode(NULL);
 			s.data=x;
-			r.next=s;
-			r=s;
-			int x=scanner.nextInt;
+			s.next=L.Head.next.next; 
+			L.Head.next=s;
+			int x=scanner.nextInt;	
 		}
 		return L;
 	} 
@@ -210,7 +209,23 @@ public class LinkedList{
 			}
 		}
 
-		
+		// change LinkList to DLinkList
+		public static DList(LinkList L){
+			DLinkList H=new DLinkList();
+			DLinkNode rear,s;
+			LinkNode p;
+			rear=H.Head;
+			p=L.Head.next;
+			while(p){
+				s=new DLinkNode(NULL);
+				s.data=p.data;
+				s.next=rear.next;
+				s.prior=rear;
+				rear.next=s
+
+			}
+
+		} 	
 
 
 	}
